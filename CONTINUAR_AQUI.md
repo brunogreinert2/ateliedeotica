@@ -2,6 +2,11 @@
 
 Atualizado em 2026-09-22 (sessão 1).
 
+**No ar:** https://brunogreinert2.github.io/ateliedeotica/ — repo público
+`brunogreinert2/ateliedeotica`, branch `master`, publicado por Actions a cada
+push (`.github/workflows/deploy.yml`). O workflow clona o app-leitura para ler
+os nove temas e as fontes. `site/` NÃO vai no git: nasce no build.
+
 ## Onde estamos
 
 **Marco 1 construído, falta preencher e publicar.** Marco 2 adiantado.
@@ -22,11 +27,17 @@ Feito e verificado no navegador (desktop e celular 375 px):
 - Botão de agendar acima da dobra no celular. Herói: desenho de raios
   atravessando uma lente convergente até o foco (as "duas luzes").
 
-## Falta para ir ao ar (Bruno)
+## Falta (Bruno)
 
-1. **Preencher `negocio.toml`**: whatsapp, whatsapp_legivel, email,
-   endereco, cep, horarios. Enquanto vazio, o site mostra "[a preencher]" em
-   amarelo e o botão de WhatsApp aponta para /contato.
+1. **Apontar o domínio.** O DNS do ateliedeotica.com.br está no registro.br
+   (a.auto.dns.br) e ainda não tem registro A. No painel do registro.br,
+   adicionar quatro A do domínio raiz para 185.199.108.153, 185.199.109.153,
+   185.199.110.153 e 185.199.111.153, e um CNAME de `www` para
+   `brunogreinert2.github.io`. Quando resolver, fechar com:
+   `gh api -X PUT repos/brunogreinert2/ateliedeotica/pages -f cname=ateliedeotica.com.br -F https_enforced=true`
+   O domínio custom NÃO foi configurado ainda de propósito: configurar antes do
+   DNS faria o endereço github.io redirecionar para um domínio que não resolve,
+   derrubando o que já está no ar.
 2. **Revisar o texto com a sua voz.** Escrevi em primeira pessoa a partir da
    proposta. Conferir em especial:
    - `atendimento.md`: a ordem e a descrição das 7 etapas e da "análise
@@ -34,12 +45,13 @@ Feito e verificado no navegador (desktop e celular 375 px):
    - `agendar.md`: "receita de preferência com menos de um ano" e o prazo.
    - `sobre.md`: a menção aos livros e à protanomalia — o tom é seu?
    - `inicio.md`: a frase em destaque ("Quem entende o que está usando…").
-3. **Uma foto boa** (armação na bancada ou o ateliê). Hoje o herói usa o
-   desenho da lente; a proposta pede foto. Soltar em `casca/` e pedir a troca.
-4. Hospedagem: GitHub Pages ou Cloudflare Pages servindo `site/`, domínio
-   apontado. Rodar `python gerar.py --publicar` antes — ele recusa se faltar
-   algo. Ainda não é repositório git.
-5. Perfil da Empresa no Google (fora do site, mas é parte do aceite).
+3. **Fotos.** Não há foto boa de armação ainda; o que existe é ANTES e DEPOIS
+   de polimento e de remoção de antirreflexo. Isso é melhor do que foto de
+   vitrine: é prova de serviço e é conteúdo. Pendente decidir se vira uma
+   página `/polimento` (serviço + galeria antes/depois) ou uma seção. Precisa
+   de um componente de comparação e de um lugar para as imagens (`imagens/`,
+   copiadas pelo gerar.py).
+4. Perfil da Empresa no Google (fora do site, mas é parte do aceite do Marco 1).
 
 ## Próximos marcos
 
