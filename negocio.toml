@@ -1,0 +1,31 @@
+# Os dados do negócio. Fonte única: todo lugar do site que mostra endereço,
+# WhatsApp, e-mail ou horário lê daqui — pelo marcador {{campo}} no .md.
+#
+# TOML: TODO valor de texto vai entre aspas, e toda linha que não é
+# `chave = "valor"` precisa começar com # para ser comentário.
+#
+# Campo vazio = PENDÊNCIA. O site ainda é gerado, mas mostra "[a preencher]"
+# em destaque no lugar, e `python gerar.py --publicar` se recusa a gerar
+# enquanto houver algum. Assim nada vai ao ar pela metade sem ninguém ver.
+
+nome = "Ateliê de Ótica"
+dominio = "ateliedeotica.com.br"
+cidade = "Porto Alegre"
+uf = "RS"
+
+# Só dígitos, com 55 e DDD — é o que o link do WhatsApp precisa.
+whatsapp = "5551993231660"
+# Como aparece escrito na página.
+whatsapp_legivel = "(51) 99323-1660"
+
+email = "ateliedeotica@gmail.com"
+
+endereco = "Rua Bom Jesus, 178 — Bairro Bom Jesus"
+cep = "91420-030"
+
+horarios = "Com hora marcada"
+
+instagram = "ateliedeotica"
+
+# Mensagem que já vem escrita quando a pessoa toca em "Agendar pelo WhatsApp".
+mensagem_agendar = "Olá, Bruno! Vi o site do Ateliê e gostaria de marcar um horário."

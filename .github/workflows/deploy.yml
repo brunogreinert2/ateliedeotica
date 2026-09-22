@@ -1,0 +1,50 @@
+# Publica o site no GitHub Pages a cada push na master.
+# Editar um .md e dar push = o site se reconstrói sozinho.
+name: Deploy no GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Os nove temas e as fontes NÃO moram aqui: são lidos do Pedra Angular,
+      # que é a referência de implementação. Repositório público, clone raso.
+      - name: Buscar o app-leitura (temas e fontes)
+        run: git clone --depth 1 https://github.com/brunogreinert2/app-leitura.git ../app-leitura
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # --publicar recusa gerar se faltar dado do negócio no negocio.toml.
+      - run: python gerar.py --publicar --app-leitura ../app-leitura
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publicar.outputs.page_url }}
+    steps:
+      - id: publicar
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,8 @@
+# O site é DERIVADO: nasce no build, a cada push. Commitá-lo faria de cada
+# correção de vírgula num .md um diff de milhares de linhas — e as fontes
+# (1,2 MB) seriam copiadas para dentro do repositório a cada geração.
+site/
+
+__pycache__/
+*.pyc
+.tmp*.md
