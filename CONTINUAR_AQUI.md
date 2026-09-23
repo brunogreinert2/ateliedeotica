@@ -1,11 +1,15 @@
 # Continuar aqui
 
-Atualizado em 2026-09-22 (sessão 1).
+Atualizado em 2026-09-22 (sessão 2).
 
 **No ar:** https://brunogreinert2.github.io/ateliedeotica/ — repo público
 `brunogreinert2/ateliedeotica`, branch `master`, publicado por Actions a cada
-push (`.github/workflows/deploy.yml`). O workflow clona o app-leitura para ler
-os nove temas e as fontes. `site/` NÃO vai no git: nasce no build.
+push (`.github/workflows/deploy.yml`). `site/` NÃO vai no git: nasce no build.
+
+**Marco A feito (2026-09-22):** este repositório é agora só o CANTEIRO. A
+ferramenta virou `brunogreinert2/atelie-gerador` (`C:\Claudetelie-gerador`)
+e o build clona ela e o app-leitura. Gerar aqui:
+`python ../atelie-gerador/gerar.py --sitio .`
 
 ## Onde estamos
 

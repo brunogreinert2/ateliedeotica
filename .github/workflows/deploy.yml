@@ -22,9 +22,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Os nove temas e as fontes NÃO moram aqui: são lidos do Pedra Angular,
-      # que é a referência de implementação. Repositório público, clone raso.
-      - name: Buscar o app-leitura (temas e fontes)
+      # Este repositório é o CANTEIRO: só conteúdo, dados e as peças da ótica.
+      # A ferramenta e os temas moram fora, e são clonados aqui no build.
+      - name: Buscar a bancada (atelie-gerador)
+        run: git clone --depth 1 https://github.com/brunogreinert2/atelie-gerador.git ../atelie-gerador
+
+      - name: Buscar o app-leitura (nove temas e fontes)
         run: git clone --depth 1 https://github.com/brunogreinert2/app-leitura.git ../app-leitura
 
       - uses: actions/setup-python@v5
@@ -32,7 +35,7 @@ jobs:
           python-version: '3.12'
 
       # --publicar recusa gerar se faltar dado do negócio no negocio.toml.
-      - run: python gerar.py --publicar --app-leitura ../app-leitura
+      - run: python ../atelie-gerador/gerar.py --publicar --sitio . --app-leitura ../app-leitura
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

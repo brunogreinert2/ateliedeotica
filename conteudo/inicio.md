@@ -4,6 +4,7 @@ titulo_aba: Ateliê de Ótica — ótica com hora marcada em Porto Alegre
 descricao: Um ateliê de ótica, não uma loja. Atendimento com hora marcada, lentes escolhidas pelo que você enxerga e não pela marca, e tudo explicado antes de você decidir.
 rota: /
 menu: Início
+nav: nao
 ordem: 0
 ---
 

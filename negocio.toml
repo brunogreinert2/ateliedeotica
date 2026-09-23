@@ -29,3 +29,15 @@ instagram = "ateliedeotica"
 
 # Mensagem que já vem escrita quando a pessoa toca em "Agendar pelo WhatsApp".
 mensagem_agendar = "Olá, Bruno! Vi o site do Ateliê e gostaria de marcar um horário."
+
+# A marca deste sítio. É o que a ferramenta (atelie-gerador) NÃO sabe sozinha:
+# como o nome se escreve, o que o botão do topo faz e como o Google deve
+# entender o negócio. O sítio dos livros terá a sua própria tabela.
+[marca]
+palavra_destaque = "Ateliê"
+palavra_resto = "de Ótica"
+tagline = ["Ótica com hora marcada em Porto Alegre.", "Critério no lugar da marca."]
+cta_rotulo = "Agendar"
+cta_destino = "whatsapp:agendar"
+schema_tipo = "Optician"
+schema_descricao = "Ótica com hora marcada. Armações e lentes escolhidas por critério técnico, não por marca."

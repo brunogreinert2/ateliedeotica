@@ -3,6 +3,7 @@ titulo: Agendar um horário
 descricao: Como marcar um horário no Ateliê de Ótica pelo WhatsApp, quanto tempo dura o atendimento e o que levar no dia.
 rota: /agendar
 menu: Agendar
+nav: nao
 ordem: 2
 ---
 
